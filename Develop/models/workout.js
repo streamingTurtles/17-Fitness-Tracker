@@ -12,11 +12,12 @@ const Schema = mongoose.Schema;
 
 //  - todo next, build out the instance of the schema now
 // review front end to see how data is populating the view
-const WorkourSchema = new Schema({
+const WorkoutSchema = new Schema({
 
-   
 
-})
+
+    
+    });
 
 
 
