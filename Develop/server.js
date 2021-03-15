@@ -16,7 +16,20 @@ require("./routes/htmlRoutes.js")(app);
 
 // open connection to our workout database
 // https://mongoosejs.com/docs/index.html
-mongoose.connect('mongodb://localhost/workout', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://localhost/workout', {useNewUrlParser: true, useUnifiedTopology: true});
+
+
+// replaced only one option connection abbove with boiler plate code from 
+// "MongoAtlas-Deploy.md" included setup instructions.
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
 
 
 
