@@ -3,27 +3,15 @@
 // create a schema in mongoose to be used for our WorkourSchema db
 // include mongoose in the project
 const mongoose = require("mongoose");
-// call the Schema constructor
-// create and instance of the Schema constructor to build the Schema 
+
+// call, create and instance of the Schema constructor to build the Schema 
 const Schema = mongoose.Schema;
-
-
-
 
 //  - todo next, build out the instance of the schema now
 // review front end to see how data is populating the view
 const WorkoutSchema = new Schema({
 
-
-
-    
     });
-
-
-
-
-
-
 
 // export our created mongoose model from WorkourSchema to be used elsewhere
 // workout = the name of our collection
