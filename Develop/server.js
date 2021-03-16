@@ -21,6 +21,8 @@ require("./routes/htmlRoutes.js")(app);
 
 // replaced only one option connection abbove with boiler plate code from 
 // "MongoAtlas-Deploy.md" included setup instructions.
+// Then, I replaced it with the the Heroku environment variable hodling 
+// the Atlas db connection string stored in Herokus environment variable.
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
     {
