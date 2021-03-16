@@ -50,9 +50,18 @@ const WorkoutSchema = new Schema({
                 default: 0
 
             }            
+        }]
+
+    },
+
+    
+    {
+        toJSON: {
+            virtuals: true
         }
-    ]
-    });
+    }
+
+    );
 
 // export our created mongoose model from WorkourSchema to be used elsewhere
 // workout = the name of our collection
