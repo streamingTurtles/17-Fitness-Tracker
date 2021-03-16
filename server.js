@@ -24,7 +24,7 @@ require("./routes/htmlRoutes.js")(app);
 // Then, I replaced it with the the Heroku environment variable hodling 
 // the Atlas db connection string stored in Herokus environment variable.
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
