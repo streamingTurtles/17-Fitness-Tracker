@@ -32,8 +32,8 @@ module.exports = app => {
         // from puclic api - update the workout data
         app.put("/api/workouts/:id", (req, res) => {
             db.Workout.findByIdAndUpdate({ _id: req.params.id }, { exercises: req.body })
-                                     .then((dbWorkouts) => {res.json(dbWorkouts) })
-                                     .catch(err => {res.json(err) });
+                                .then((dbWorkouts) => {res.json(dbWorkouts) })
+                                .catch(err => {res.json(err) });
         });     
         
 }

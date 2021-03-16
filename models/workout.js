@@ -12,7 +12,7 @@ const Schema = mongoose.Schema;
 const WorkoutSchema = new Schema({
     day: {
         type: Date,
-        default: () => Date()
+        default: Date.now
     },
     exercises: [
         {
@@ -55,14 +55,27 @@ const WorkoutSchema = new Schema({
     }, 
 
     {
+        // https://mongoosejs.com/docs/2.7.x/docs/virtuals.html
+        // add to the model definition, setting a virtual field to true to see on the frontEnd 
         toJSON: {
             virtuals: true
         }
     }    
     );
 
-// export our created mongoose model from WorkourSchema to be used elsewhere
-// workout = the name of our collection
-// WorkoutSchema = our schema defined above - to be built out
+
+    // https://mongoosejs.com/docs/tutorials/virtuals.html
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+    // Now use the virtual attribute to compute the "totalDuration", duration of the local exercise.duation 
+    WorkoutSchema.virtual("totalDuration").get(function () {
+        return this.exercises.reduce(function(total, exercise) {
+            return total + exercise.duration;
+        }, 0);
+    });
+
+
 const Workout = mongoose.model("workout", WorkoutSchema);
 module.exports = Workout;
+
+
+
