@@ -19,7 +19,7 @@ module.exports = function(app){
         });        
 
         // wildcard to access anything following the base URL
-        app.get("/*", function (req, res){
+        app.get("*", function (req, res){
         res.sendFile(path.join(__dirname, "../public/index.html"))
         });
 
